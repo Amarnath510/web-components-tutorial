@@ -19,7 +19,7 @@
     <app-input></app-input>
     <!-- NOTE: You can't use as AppElement -->
     ```
-  - **![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Demo - simple component**: [codepen](https://codepen.io/Amarnath510/pen/gOLgZeq)
+  - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) [Demo - simple component](https://codepen.io/Amarnath510/pen/gOLgZeq)
 ### WC life cycle methods
 - `constructor`: Called when instance of the element is created. Don't write rendering logic here as it will be too early
 - `connectedCallback`: Browser calls when the element is inserted into the DOM. Rendering logic should go here instead of in the constructor
