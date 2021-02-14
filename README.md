@@ -19,7 +19,7 @@
     <app-input></app-input>
     <!-- NOTE: You can't use as AppElement -->
     ```
-  - **Demo - simple component**: [codepen](https://codepen.io/Amarnath510/pen/gOLgZeq)
+  - **![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Demo - simple component**: [codepen](https://codepen.io/Amarnath510/pen/gOLgZeq)
 ### WC life cycle methods
 - `constructor`: Called when instance of the element is created. Don't write rendering logic here as it will be too early
 - `connectedCallback`: Browser calls when the element is inserted into the DOM. Rendering logic should go here instead of in the constructor
@@ -48,9 +48,6 @@
 ### Attributes vs Slot
 - You can pass value via attribute to a component or an HTML using Slot. The difference is that if the component has a fixed HTML then your only option is to send data into the HTML so that the component replaces the identifiers with the passed attribute values
 - But if you want to use your own HTML within the component then we have to go with Slot.
-
-
-
 
 
 ## Resources
