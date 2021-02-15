@@ -5,10 +5,7 @@ mainTemplate.innerHTML = `
       height: 100%;
       width: 80%;
       margin: 0 auto;
-    }
-
-    h2 {
-      color: #000;
+      color: #000; 
     }
   </style>
   <div class="main">

@@ -1,2 +1,4 @@
 .cache
 .gitattributes
+node_modules/
+dist/

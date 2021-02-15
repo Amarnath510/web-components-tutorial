@@ -4,14 +4,16 @@ headerTemplate.innerHTML = `
     div {
       background: #01344e;
     }
-    h1 {
+    h1, h2 {
       margin: 0;
       padding: 16px;
+      padding-bottom: 8px;
       text-align: center;
     }
   </style>
   <div>
-    <h1>Web Components - Design Systems Style Guide</h1>
+    <h1>Web Components</h1>
+    <h2>Design Systems Style Guide</h2>
   </div>
 `;
 
