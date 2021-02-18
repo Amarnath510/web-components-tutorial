@@ -20,4 +20,5 @@ html, body {
 
 .app__main {
   flex: 1;
+  margin: 16px;
 }

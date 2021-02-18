@@ -4,16 +4,19 @@ headerTemplate.innerHTML = `
     div {
       background: #01344e;
     }
-    h1, h2 {
+    .header__title, .header__sub-title {
       margin: 0;
-      padding: 16px;
-      padding-bottom: 8px;
+      padding: 4px;
       text-align: center;
+    }
+
+    .header__sub-title {
+      padding-bottom: 12px;
     }
   </style>
   <div>
-    <h1>Web Components</h1>
-    <h2>Design Systems Style Guide</h2>
+    <h1 class="header__title">Web Components</h1>
+    <h2 class="header__sub-title">Design Systems - Style Guide</h2>
   </div>
 `;
 

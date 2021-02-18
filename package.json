@@ -4,9 +4,11 @@
   "description": "- Set of web platform API's that allow us to create custom, reusable and encapsulated html tags to use in web pages and web apps - WCs don't need any 3rd party libraries or frameworks - Any 3rd party library or framework can use WCs",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "heroku-postbuild": "parcel build src/index.html"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,8 @@
   "homepage": "https://github.com/Amarnath510/web-components-tutorial#readme",
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }

@@ -1,17 +1,17 @@
 const footerTemplate = document.createElement('template');
 footerTemplate.innerHTML = `
   <style>
-    div {
+    .footer {
       background: #01344e;
-    }
-    h3 {
-      margin: 0;
       padding: 16px;
+    }
+    .footer__msg {
+      margin: 0;
       text-align: center;
     }
   </style>
-  <div>
-    <h3>© Amarnath Chandana, 2021</h3>
+  <div class="footer">
+    <h4 class="footer__msg">© Amarnath Chandana, 2021</h4>
   </div>
 `;
 
