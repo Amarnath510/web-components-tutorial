@@ -4,7 +4,7 @@
 - WCs don't need any 3rd party libraries or frameworks
 - Any 3rd party library or framework can use WCs
 
-## Building blocks of WCs
+## Building blocks of WC
 
 ### Custom Elements
 - Used to create custom elements using two ways,
