@@ -5,7 +5,7 @@ mainTemplate.innerHTML = `
       height: 100%;
       width: 80%;
       margin: 0 auto;
-      color: #000; 
+      color: #000;
     }
 
     .main__layout {
@@ -22,6 +22,12 @@ mainTemplate.innerHTML = `
       flex-basis: 70%;
       height: 100%;
       padding: 0 12px 12px 16px;
+    }
+
+    @media screen and (max-width: 800px) {
+      .main {
+        width: 100%;
+      }
     }
   </style>
   <div class="main">

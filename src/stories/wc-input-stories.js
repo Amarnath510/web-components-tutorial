@@ -1,6 +1,5 @@
 const wcInputStoriesTemplate = document.createElement('template');
 wcInputStoriesTemplate.innerHTML = `
-
   <wc-story-header title="Input"></wc-story-header>
 
   <wc-input no-title="true"></wc-input>
@@ -14,6 +13,12 @@ wcInputStoriesTemplate.innerHTML = `
   <wc-dropdown id="sizes" options="small|medium|large">
     <span slot="title">Size</span>
   </wc-dropdown>
+
+  <wc-story-attr-header title="Component Outputs"></wc-story-attr-header>
+
+  <wc-output-properties>
+    <span slot="item">Type Event</span>
+  </wc-output-properties>
 `;
 
 class WCInputStories extends HTMLElement {

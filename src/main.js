@@ -12,9 +12,12 @@ import './components/wc-content.js';
 import './components/wc-button.js';
 import './components/wc-dropdown.js';
 import './components/wc-input.js';
+import './components/wc-card.js';
+import './components/wc-output-properties.js';
 
 
 // Stories
 import './stories/wc-button-stories.js';
 import './stories/wc-dropdown-stories.js';
 import './stories/wc-input-stories.js';
+import './stories/wc-card-stories.js';

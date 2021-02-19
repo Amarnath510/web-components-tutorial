@@ -38,14 +38,14 @@ wcInputTemplate.innerHTML = `
     <div class="input-menu__title-wrapper">
       <slot name="title"></slot>
     </div>
-    <input id="hybrid" type="text" placeholder="Type content" maxlength="12" class="small"/>
+    <input id="hybrid" type="text" placeholder="Type content" maxlength="10" class="small"/>
   </div>
 `;
 
 class WCInput extends HTMLElement  {
 
   static get observedAttributes() {
-    return ['type', 'size'];
+    return ['type', 'size', 'max-length'];
   }
 
   attributeChangedCallback(attrName, oldValue, newValue) {
@@ -55,6 +55,10 @@ class WCInput extends HTMLElement  {
       } else if (attrName == 'size') {
         this.updateSize(newValue);
         this.updateMaxLength(newValue);
+      } else if (attrName == 'max-length') {
+        if (this.inputEle) {
+          this.inputEle.setAttribute('maxlength', newValue);
+        }
       }
     }
   }
@@ -69,7 +73,8 @@ class WCInput extends HTMLElement  {
   }
 
   updateMaxLength(size = 'small') {
-    const len = size == 'medium' ? 16 : (size == 'large' ? 20 : 12);
+    const len = size == 'medium' ? 12 : (size == 'large' ? 14 : 10);
+
     this.inputEle.setAttribute('maxlength', len)
   }
 
@@ -81,6 +86,7 @@ class WCInput extends HTMLElement  {
       this.shadowRoot.querySelectorAll(".input-menu__title-wrapper")[0].remove();
     }
     this.inputEle.setAttribute('placeholder', this.getAttribute('placeholder') || 'Type content');
+    this.inputEle.setAttribute('maxlength', this.getAttribute('max-length') || 10);
 
     this.addTypeEvent();
   }

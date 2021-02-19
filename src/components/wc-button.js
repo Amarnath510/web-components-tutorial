@@ -4,7 +4,7 @@ class WCButton extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['border-radius', 'size', 'title'];
+    return ['border-radius', 'size', 'title', 'type'];
   }
 
   attributeChangedCallback(attrName, oldValue, newValue) {
@@ -15,6 +15,11 @@ class WCButton extends HTMLElement {
         this.updateSize(newValue);
       } else if (attrName == 'title') {
         this.updateTitle(newValue);
+      } else if (attrName == 'type') {
+        if (this.buttonEle) {
+          this.buttonEle.classList.remove("primary", "secondary", "danger");
+          this.buttonEle.classList.add(newValue);
+        }
       }
     }
   }
@@ -70,19 +75,19 @@ class WCButton extends HTMLElement {
           border-radius: 10px;
         }
         .small {
+          width: 100px;
+          padding: 10px;
+          font-size: 90%;
+        }
+        .medium {
           width: 120px;
           padding: 12px;
           font-size: 100%;
         }
-        .medium {
+        .large {
           width: 140px;
           padding: 14px;
           font-size: 105%;
-        }
-        .large {
-          width: 160px;
-          padding: 16px;
-          font-size: 110%;
         }
       </style>
       <button type="button" class="${this.type}">${this.title}</button>
@@ -91,6 +96,8 @@ class WCButton extends HTMLElement {
     this.buttonEle.addEventListener('click', () => {
       this.dispatchEvent(new CustomEvent('btnClicked', { detail: this.type }));
     });
+    this.updateSize(this.getAttribute('size') || 'small');
+    this.updateRadius(this.getAttribute('border-radius') || 'yes');
   }
 }
 

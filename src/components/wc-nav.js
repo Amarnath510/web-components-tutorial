@@ -4,7 +4,7 @@ wcNavTemplate.innerHTML = `
     .nav {
       height: 100%;
       background: #f0f1f1;
-      border-radius: 16px;
+      border-radius: 4px;
     }
 
     ul {
@@ -23,6 +23,10 @@ wcNavTemplate.innerHTML = `
       padding: 16px;
       display: block;
     }
+
+    .active {
+      background: #cfd3e0;
+    }
   </style>
   <div class="nav">
     <ul class="list">
@@ -34,7 +38,10 @@ wcNavTemplate.innerHTML = `
       </li>
       <!-- <li class="item">
         <a class="item-link" href="/dropdowns">Dropdown</a>
-      </li>-->
+      </li> -->
+      <li class="item">
+        <a class="item-link" href="/cards">Cards</a>
+      </li>
     </ul>
   </div>
 `;
@@ -51,13 +58,20 @@ class WCNav extends HTMLElement {
   }
 
   addClickEvent() {
+    const items = this.shadowRoot.querySelectorAll('.item');
     const links = this.shadowRoot.querySelectorAll('.item-link');
+
+    // make first item(link) as active
+    items[0].classList.add('active');
+
     links.forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
         let selectedTab = e.target.href.split('/')[3];
         selectedTab = (!selectedTab || selectedTab.trim().length === 0) ? 'buttons' : selectedTab;
         this.dispatchEvent(new CustomEvent('tabSelected', { detail: selectedTab }));
+        items.forEach(item => item.classList.remove('active'));
+        e.target.parentNode.classList.add('active');
       });
     });
   }

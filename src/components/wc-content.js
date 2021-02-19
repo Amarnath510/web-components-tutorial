@@ -35,6 +35,8 @@ class WCContent extends HTMLElement {
       return `<wc-dropdown-stories></wc-dropdown-stories>`;
     } else if (type === 'inputs') {
       return `<wc-input-stories></wc-input-stories>`;
+    } else if (type === 'cards') {
+      return `<wc-card-stories></wc-card-stories>`;
     } else {
       return `<wc-button-stories></wc-button-stories>`;
     }
