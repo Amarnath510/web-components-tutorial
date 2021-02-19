@@ -30,13 +30,13 @@
 - Shadow DOM serves for encapsulation. It allows a component to have its very own “shadow” DOM tree, that can’t be accidentally accessed from the main document, may have local style rules, and more.
 - Example: `<input type="range" />`. In order to see the Shadow DOM of this element we have to enable(in Chrome) Dev tools --> Settings --> Show user agent shadow DOM (in Elements section)
 ### Shadow Tree
-- Light Tree: Regular DOM subtree, made of HTML children
-- Shadow Tree: A hidden DOM subtree, not reflected in HTML (like input type="range" element)
+- `Light Tree`: Regular DOM subtree, made of HTML children
+- `Shadow Tree`: A hidden DOM subtree, not reflected in HTML (like input type="range" element)
 - `this.attachShadow({ mode: 'open | closed' });` // Only one shadow root is created per element
-    // "open": We can access shadow tree using "ele.shadowRoot" which returns element to which we can ad elements(<p>) using innerHTML
-    // "closed": None can access shadow tree. "ele.shadowRoot" returns "null". Browser native shadow tree like <input type="range"> are closed
+    - `open`: We can access shadow tree using "ele.shadowRoot" which returns element to which we can ad elements(<p>) using innerHTML
+    - `closed`: None can access shadow tree. "ele.shadowRoot" returns "null". Browser native shadow tree like <input type="range"> are closed
 ### Shadow Tree Encapsulation
-- Shadow DOM elements are not visible to querySelector from the light DOM(actual DOM). Shadow DOM ids can be same as Light DOM but they have to be unique within Shadow DOM
+- Shadow DOM elements are not visible to querySelector from the light DOM(actual DOM). Shadow DOM ids can be same in Light DOM but they have to be unique within Shadow DOM
 - Shadow DOM has own Stylesheets. Style rules of outer DOM can't effect Shadow DOM styles
 ### HTML Templates
 - Just like `<ng-template>` in Angular which is nothing but based on `<template>` tag of HTML where we can write a valid HTML snippet and put it inside `<template>` tag and use it based on the event/condition.
@@ -47,8 +47,7 @@
 - **Composition**: Browser takes elements from the light DOM and renders them in the corresponding slots of the shadow DOM.
 ### Attributes vs Slot
 - You can pass value via attribute to a component or an HTML using Slot. The difference is that if the component has a fixed HTML then your only option is to send data into the HTML so that the component replaces the identifiers with the passed attribute values
-- But if you want to use your own HTML within the component then we have to go with Slot.
-
+- But if you want to use your own HTML within the component then we have to go with Slot. Slots give us lot of flexibility.
 
 ## Resources
 - [JS Info](https://javascript.info/web-components)
