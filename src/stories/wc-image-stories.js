@@ -6,7 +6,7 @@ class WCImageStories extends HTMLElement {
       <wc-image shape="square"></wc-image>
       <wc-story-attr-header title="Component Inputs"></wc-story-attr-header>
       <wc-dropdown id="shapes" options="square|circle|rhombus|octagon">
-        <span slot="title">Shapes</span>
+        <span slot="title">Shape</span>
       </wc-dropdown>
     `;
     this.imgEle = this.shadowRoot.querySelector('wc-image');
