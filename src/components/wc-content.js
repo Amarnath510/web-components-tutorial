@@ -37,6 +37,8 @@ class WCContent extends HTMLElement {
       return `<wc-input-stories></wc-input-stories>`;
     } else if (type === 'cards') {
       return `<wc-card-stories></wc-card-stories>`;
+    } else if (type === 'images') {
+      return `<wc-image-stories></wc-image-stories>`;
     } else {
       return `<wc-button-stories></wc-button-stories>`;
     }

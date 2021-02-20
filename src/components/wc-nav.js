@@ -36,9 +36,12 @@ wcNavTemplate.innerHTML = `
       <li class="item">
         <a class="item-link" href="/inputs">Inputs</a>
       </li>
-      <!-- <li class="item">
+      <li class="item">
         <a class="item-link" href="/dropdowns">Dropdown</a>
-      </li> -->
+      </li>
+      <li class="item">
+        <a class="item-link" href="/images">Image</a>
+      </li>
       <li class="item">
         <a class="item-link" href="/cards">Cards</a>
       </li>

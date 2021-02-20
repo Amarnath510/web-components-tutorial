@@ -19,17 +19,17 @@ wcInputTemplate.innerHTML = `
     }
 
     .small {
-      width: 170px;
+      width: 150px;
       padding: 5px;
     }
 
     .medium {
-      width: 200px;
+      width: 180px;
       padding: 8px;
     }
 
     .large {
-      width: 220px;
+      width: 200px;
       padding: 10px;
     }
   </style>
