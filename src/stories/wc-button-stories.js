@@ -51,7 +51,7 @@ wcInputStoriesTemplate.innerHTML = `
 
   <wc-story-attr-header title="Component Outputs"></wc-story-attr-header>
   
-  <wc-output-properties>
+  <wc-output-properties id="outputProp">
     <span slot="item">Click Event</span>
   </wc-output-properties>
 `;
@@ -85,8 +85,12 @@ class WCButtonStories extends HTMLElement {
       wcButtonsEle.forEach(wcBtn => wcBtn.setAttribute('title', e.detail));
     });
 
+    const outputPropEle = this.shadowRoot.querySelector('#outputProp');
+    const outputClickContentEle = document.createElement('span');
+    outputPropEle.shadowRoot.append(outputClickContentEle);
     wcButtonsEle.forEach(wcBtn =>
-      wcBtn.addEventListener('btnClicked', e => alert(e.detail + ' clicked')));
+      wcBtn.addEventListener('btnClicked',
+        e => outputClickContentEle.innerText = `${e.detail} button clicked`));
   }
 }
 

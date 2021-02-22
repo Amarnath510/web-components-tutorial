@@ -43,7 +43,6 @@ class WCInputStories extends HTMLElement {
     const wcInputEle = this.shadowRoot.querySelector('wc-input');
     const typeEventEle = this.shadowRoot.querySelector('#typeEvent')
     const typedContentEle = document.createElement('span')
-    typedContentEle.setAttribute('id', 'typedContent');
     typeEventEle.shadowRoot.append(typedContentEle)
 
     inputTypeOptionsEle.addEventListener('optionChanged', e => {

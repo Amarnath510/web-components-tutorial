@@ -18,6 +18,12 @@ wcDropdownStoriesTemplate.innerHTML = `
   <wc-dropdown options="small|medium|large" id="dropdownSizes">
     <slot slot="title">Size</slot>
   </wc-dropdown>
+
+  <wc-story-attr-header title="Component Outputs"></wc-story-attr-header>
+
+  <wc-output-properties id="selectedItem">
+    <span slot="item">Selected Item</span>
+  </wc-output-properties>
 `;
 
 class WCDropdownStories extends HTMLElement {
@@ -27,10 +33,19 @@ class WCDropdownStories extends HTMLElement {
   connectedCallback() {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(wcDropdownStoriesTemplate.content.cloneNode(true));
-
     this.selectCompEle = this.shadowRoot.getElementById('selectComp');
     this.dropdownSizesEle = this.shadowRoot.getElementById('dropdownSizes');
-    this.dropdownSizesEle.addEventListener('optionChanged', e => this.selectCompEle.setAttribute('size', e.detail));
+    this.dropdownSizesEle.addEventListener('optionChanged',
+      e => this.selectCompEle.setAttribute('size', e.detail));
+    
+    // For printing selected output
+    const selectedItemEle = this.shadowRoot.querySelector('#selectedItem');
+    const selectedItemContentEle = document.createElement('span');
+    selectedItemEle.shadowRoot.append(selectedItemContentEle);
+
+    this.selectCompEle.addEventListener('optionChanged', e => {
+      selectedItemContentEle.innerText = e.detail;
+    });
   }
 }
 
